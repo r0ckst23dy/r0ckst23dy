@@ -31,10 +31,7 @@ const Create = ({ currentId, setCurrentId }) => {
         clear();
     }
 
-    const clear = () => {
-        setCurrentId === null;
-        setPostData({issuer: '', title: '', issuedTo: '', summary: '', comments:'', selectFile:''});
-    }
+
 
     return ( 
         <form className="form-container" onSubmit={handleSubmit}>

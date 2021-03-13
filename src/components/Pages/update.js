@@ -30,10 +30,6 @@ const Update = ({ currentId, setCurrentId }) => {
         clear();
     }
 
-    const clear = () => {
-        setCurrentId === null;
-        setPostData({issuer: '', title: '', issuedTo: '', summary: '', comments:'', selectFile:''});
-    }
 
     return ( 
         <form className="update-form-container" onSubmit={handleSubmit}>
