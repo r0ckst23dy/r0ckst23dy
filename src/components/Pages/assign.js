@@ -18,7 +18,7 @@ const Assign = ({setCurrentId}) => {
                     <h3>{data.issuedTo}</h3>
                     <h5>{data.issueDate}</h5>
                     <h5>{data._id}</h5>
-                    <button onClick={() => {setCurrentId(data._id)}}>
+                    <button classname="button"onClick={() => {setCurrentId(data._id)}}>
                         <Link to="/view/_id">View</Link>
                     </button>
                 </div>
@@ -28,14 +28,14 @@ const Assign = ({setCurrentId}) => {
     })
 
     return ( 
-        <div >
-            <div>
+        <div className="Assign-Page-Container">
+            <div className="Header-Back-btn">
                 <h1> assign work orders</h1>
-                <button>
+                <button className="button">
                     <Link to="/create">Back</Link>
                 </button>
             </div>
-            <div>{dataObject}</div>
+            <div className="Work-Order">{dataObject}</div>
 
         </div>
 

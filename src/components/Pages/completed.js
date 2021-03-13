@@ -17,7 +17,7 @@ const Completed = ({setCurrentId}) => {
                     <h1>{`${data ? "Title" : null}`}: {data.title}</h1>
                     <h3>{data.issuedTo}</h3>
                     <h5>{data.issueDate}</h5>
-                    <button onClick={() => {setCurrentId(data._id)}}>
+                    <button className="button" onClick={() => {setCurrentId(data._id)}}>
                         <Link to="/view/_id">View</Link>
                     </button>
                 </div>
@@ -27,14 +27,14 @@ const Completed = ({setCurrentId}) => {
     })
 
     return ( 
-        <div >
-            <div>
+        <div className="Complete-Page-Container">
+            <div className="Header-Back-btn">
                 <h1>Completed Work Orders</h1>
-                <button>
+                <button className="button">
                     <Link to="/create">Back</Link>
                 </button>                
             </div>
-            <div>{dataObject}</div>
+            <div className="Work-Order">{dataObject}</div>
         </div>
 
     );

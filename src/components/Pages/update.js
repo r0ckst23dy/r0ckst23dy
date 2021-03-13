@@ -36,7 +36,7 @@ const Update = ({ currentId, setCurrentId }) => {
     }
 
     return ( 
-        <form onSubmit={handleSubmit}>
+        <form className="update-form-container" onSubmit={handleSubmit}>
             <div>{postData.assignStatus}</div>
             <div>{`${currentId ? "Updating" : 'Create'}`} a Work Order</div>
             <input
@@ -85,7 +85,7 @@ const Update = ({ currentId, setCurrentId }) => {
                 <option value="Archived">Archived</option>                    
             </select>
             <button type="submit"> Submit </button>
-            <button>
+            <button className= "button">
                     <Link to="/view">Cancel</Link>
             </button>                
         </form>

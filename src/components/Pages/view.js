@@ -19,19 +19,19 @@ const View = ({ currentId, setCurrentId }) => {
 
 
     return(
-        <div>
-            <div>
-                <h1>{postData.title}</h1>
-                <h3>{postData.issuedTo}</h3>
-                <h3>{postData.issueData}</h3>
-                <div>{postData.issuer}</div>
-                <h4>{postData.summary}</h4>
-                <h4>{postData.comments}</h4>
+        <div className= "View-Container">
+            <div className="Work-Order">
+                <h1 className="Work-Order">{postData.title}</h1>
+                <h3 className="Work-Order" >{postData.issuedTo}</h3>
+                <h3 className="Work-Order">{postData.issueData}</h3>
+                <div className="Work-Order">{postData.issuer}</div>
+                <h4 className="Work-Order">{postData.summary}</h4>
+                <h4 className="Work-Order">{postData.comments}</h4>
             </div>
-            <button>
+            <button className= "button">
                     <Link to="/create">Back</Link>
             </button>            
-            <button onClick={() => {setCurrentId(postData._id)}}>
+            <button className= "button" onClick={() => {setCurrentId(postData._id)}}>
                         <Link to="/update">Update</Link>
             </button>
             

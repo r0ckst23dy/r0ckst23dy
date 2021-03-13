@@ -20,7 +20,7 @@ const Current = ({currentId, setCurrentId}) => {
                     <h3>{data.issuedTo}</h3>
                     <h5>{data.issueDate}</h5>
                     <h5>{data._id}</h5>
-                    <button onClick={() => { return post}}>
+                    <button classname="button" onClick={() => { return post}}>
                         <Link to="/view/_id">View</Link>
                     </button>
                 </div>
@@ -30,14 +30,14 @@ const Current = ({currentId, setCurrentId}) => {
     })
 
     return ( 
-        <div >
-            <div>
+        <div className= "Current-Page-Container" >
+            <div className= "Header-Back-btn" >
                 <h1>These are your current work orders</h1>
-                <button>
+                <button className="button">
                     <Link to="/create">Back</Link>
                 </button>
             </div>
-            <div>{dataObject}</div>
+            <div className=  "Work-Order" >{dataObject}</div>
         </div>
 
     );

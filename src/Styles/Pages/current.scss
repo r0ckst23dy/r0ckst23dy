@@ -1,0 +1,24 @@
+.Current-Page-Container { 
+    background-color: gold;
+    height: 75vh;
+    border-radius: 7px;
+    box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.5);
+    .Header-Back-btn {
+        justify-content: center;
+        color:  rgb(12, 85, 12);
+    }
+
+    .Work-Order {
+        color:  rgb(12, 85, 12);
+    }
+
+    .button button {
+        border-radius: 5px;
+        background-color: white;
+        text-decoration: none;
+    }
+
+    .button a {
+        text-decoration: none;
+    }
+}

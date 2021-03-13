@@ -34,57 +34,59 @@ const Form = ({ currentId, setCurrentId }) => {
     }
 
     return ( 
-        <form onSubmit={handleSubmit} className="form-container">
+        <form onSubmit={handleSubmit} className="create-form-container">
             <div>{`${currentId ? "Updating" : 'Create'}`} a Work Order</div>
-            <div className= "two-column">
-                <input
-                    name = 'issuer'
-                    label='Issuer'
-                    value= {postData.issuer}
-                    placeholder='Issuer'
-                    onChange={(e) => setPostData({... postData, issuer: e.target.value })}
-                />
-                <input
-                    name = 'title'
-                    label='Title'
-                    value= {postData.title}
-                    placeholder='Title'
-                    onChange={(e) => setPostData({... postData, title: e.target.value })}
-                />            
-                <input
-                name = 'issuedTo'
-                label='IssuedTo'
-                value= {postData.issuedTo}
-                placeholder='Issued To'
-                onChange={(e) => setPostData({... postData, issuedTo: e.target.value })}
-                />
-            </div>
-            <div className="one-column">                 
-                    <input
-                    name = 'summary'
-                    label='Summary'
-                    value= {postData.summary}
-                    placeholder='Summary'
-                    onChange={(e) => setPostData({... postData, summary: e.target.value })}
+            <div className="create-form">
+                <div className= "two-column">
+    `             <input
+                        name = 'issuer'
+                        label='Issuer'
+                        value= {postData.issuer}
+                        placeholder='Issuer'
+                        onChange={(e) => setPostData({... postData, issuer: e.target.value })}
                     />
-            </div> 
-            <div className="one-column">           
-                <input
-                name = 'comments'
-                label='Comments'
-                value= {postData.comments}
-                placeholder='Comments'
-                onChange={(e) => setPostData({... postData, comments: e.target.value })}
-                />
-            </div> 
-            
-                <div className="one-column">
-                    <FileBase 
-                        type= "file"
-                        multiple={false}
-                        onDone={( {base64} ) => setPostData({ ... postData, selectFile: base64})}
+                    <input
+                        name = 'title'
+                        label='Title'
+                        value= {postData.title}
+                        placeholder='Title'
+                        onChange={(e) => setPostData({... postData, title: e.target.value })}
+                    />            
+                    <input
+                    name = 'issuedTo'
+                    label='IssuedTo'
+                    value= {postData.issuedTo}
+                    placeholder='Issued To'
+                    onChange={(e) => setPostData({... postData, issuedTo: e.target.value })}
+                    />
+                </div>
+                <div className="one-column">                 
+                        <input
+                        name = 'summary'
+                        label='Summary'
+                        value= {postData.summary}
+                        placeholder='Summary'
+                        onChange={(e) => setPostData({... postData, summary: e.target.value })}
+                        />
+                </div> 
+                <div className="one-column">           
+                    <input
+                    name = 'comments'
+                    label='Comments'
+                    value= {postData.comments}
+                    placeholder='Comments'
+                    onChange={(e) => setPostData({... postData, comments: e.target.value })}
                     />
                 </div> 
+                
+                    <div className="one-column">
+                        <FileBase 
+                            type= "file"
+                            multiple={false}
+                            onDone={( {base64} ) => setPostData({ ... postData, selectFile: base64})}
+                        />
+                    </div> 
+                </div>
             <button className="submit-btn" type="submit"> Submit </button>    
             <button className="submit-btn" onClick={clear}> Clear </button>                   
         </form>

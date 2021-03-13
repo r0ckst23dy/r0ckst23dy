@@ -37,7 +37,7 @@ const Create = ({ currentId, setCurrentId }) => {
     }
 
     return ( 
-        <form onSubmit={handleSubmit}>
+        <form className="form-container" onSubmit={handleSubmit}>
             <div>{`${currentId ? "Updating" : 'Create'}`} a Work Order</div>
             <input
                 name = 'issuer'
