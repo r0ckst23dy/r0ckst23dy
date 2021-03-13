@@ -89,9 +89,6 @@ const Create = ({ currentId, setCurrentId }) => {
                 />
             </div> 
             <button type="submit"> Submit </button>    
-            <button className= "button">
-                    <Link to="/create">Backl</Link>
-            </button> 
         </form>
     );
 }
