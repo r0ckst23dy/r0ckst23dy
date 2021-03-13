@@ -28,10 +28,10 @@ const Form = ({ currentId, setCurrentId }) => {
         clear();
     }
 
-    const clear = () => {
-        setCurrentId === null;
-        setPostData({issuer: '', title: '', issuedTo: '', summary: '', comments:'', selectFile:''});
-    }
+    // const clear = () => {
+    //     setCurrentId === null;
+    //     setPostData({issuer: '', title: '', issuedTo: '', summary: '', comments:'', selectFile:''});
+    // }
 
     return ( 
         <form onSubmit={handleSubmit} className="create-form-container">
