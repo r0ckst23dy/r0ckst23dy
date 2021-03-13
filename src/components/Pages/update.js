@@ -27,7 +27,7 @@ const Update = ({ currentId, setCurrentId }) => {
 
         }
         
-        clear();
+
     }
 
 

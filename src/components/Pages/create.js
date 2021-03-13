@@ -28,7 +28,7 @@ const Create = ({ currentId, setCurrentId }) => {
             dispatch(createPost(postData));
 
         }
-        clear();
+
     }
 
 
@@ -89,7 +89,9 @@ const Create = ({ currentId, setCurrentId }) => {
                 />
             </div> 
             <button type="submit"> Submit </button>    
-            <button onClick={clear}> Clear </button>                   
+            <button className= "button">
+                    <Link to="/create">Backl</Link>
+            </button> 
         </form>
     );
 }
