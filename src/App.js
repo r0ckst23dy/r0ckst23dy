@@ -60,6 +60,7 @@ const App = () => {
                             </div>
                     </nav>
                 </div>
+                <Route path= "/" ><Create  setCurrentId= { setCurrentId }/></Route>
                 <Route path="/current" ><Current  setCurrentId= { setCurrentId } /></Route>
                 <Route path="/current-view"><CurrentView currentId= { currentId } setCurrentId = { setCurrentId }/></Route>
                 <Route path="/current-update"><CurrentUpdate currentId= { currentId } setCurrentId = { setCurrentId }/></Route>
