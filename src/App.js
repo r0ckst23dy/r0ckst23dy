@@ -44,7 +44,7 @@ const App = () => {
                     <nav className="navbar__navbar-links">
                         
                             <div className="navbar__navbar-link2">
-                                <Link to="/create" >Create</Link>
+                                <Link to="/" >Create</Link>
                             </div>
                             <div  className="navbar__navbar-link5">
                                 <Link to="/assign"> Assign</Link>
@@ -60,11 +60,11 @@ const App = () => {
                             </div>
                     </nav>
                 </div>
-                <Route path= "/" ><Create  setCurrentId= { setCurrentId }/></Route>
+                
                 <Route path="/current" ><Current  setCurrentId= { setCurrentId } /></Route>
                 <Route path="/current-view"><CurrentView currentId= { currentId } setCurrentId = { setCurrentId }/></Route>
                 <Route path="/current-update"><CurrentUpdate currentId= { currentId } setCurrentId = { setCurrentId }/></Route>
-                <Route path="/create" exact ><Create currentId= { currentId } setCurrentId = { setCurrentId } /></Route>
+                <Route path="/" exact ><Create currentId= { currentId } setCurrentId = { setCurrentId } /></Route>
                 <Route path="/completed"><Completed setCurrentId = { setCurrentId }/></Route>
                 <Route path="/completed-view"><CompletedView currentId= { currentId } setCurrentId = { setCurrentId }/></Route>
                 <Route path="/completed-update"><CompletedUpdate currentId= { currentId } setCurrentId = { setCurrentId }/></Route>
