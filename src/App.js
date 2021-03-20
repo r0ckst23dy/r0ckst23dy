@@ -4,15 +4,20 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import { getPosts } from './actions/posts';
 import Create from './components/Pages/create.js';
-import Current from './components/Pages/current.js';
-import Assign from './components/Pages/assign';
-import Completed from './components/Pages/completed';
-import Archived from './components/Pages/archived';
-import View from './components/Pages/view';
-import Update from './components/Pages/update';
+import Current from './components/Pages/Current/current.js';
+import CurrentView from './components/Pages/Current/current-view.js';
+import CurrentUpdate from './components/Pages/Current/current-update.js';
+import Assign from './components/Pages/Assign/assign';
+import AssignView from './components/Pages/Assign/assign-view';
+import AssignUpdate from './components/Pages/Assign/assign-update';
+import Completed from './components/Pages/Completed/completed';
+import CompletedView from './components/Pages/Completed/completed-view';
+import CompletedUpdate from './components/Pages/Completed/completed-update';
+import Archived from './components/Pages/Archived/archived';
+import ArchivedView from './components/Pages/Archived/archived-view';
+
 
 import logo from '../src/Assets/logo.png'
-
 
 
 const App = () => {
@@ -45,7 +50,7 @@ const App = () => {
                                 <Link to="/assign"> Assign</Link>
                             </div>
                             <div className="navbar__navbar-link1">
-                                <Link to="/">Current</Link>
+                                <Link to="/current">Current</Link>
                             </div>
                             <div className="navbar__navbar-link4">
                                 <Link to="/completed">Completed</Link>
@@ -53,16 +58,21 @@ const App = () => {
                             <div lassName="navbar__navbar-link3">
                                 <Link to="/archived"> Archived</Link>
                             </div>
-                        
                     </nav>
                 </div>
-                <Route path="/" exact component={Current} />
-                <Route path="/create" exact component={Create} />
-                <Route path="/update"><Update currentId= { currentId } setCurrentId= { setCurrentId }/></Route>
-                <Route path="/view"><View currentId= { currentId } setCurrentId= { setCurrentId }/></Route> 
-                <Route path="/completed"><Completed currentId= { currentId } setCurrentId= { setCurrentId }/></Route>>
-                <Route path="/assign"><Assign currentId= { currentId } setCurrentId= { setCurrentId }/></Route>
-                <Route path="/archived" ><Archived currentId= { currentId } setCurrentId= { setCurrentId } /></Route>
+                <Route path="/current" ><Current  setCurrentId= { setCurrentId } /></Route>
+                <Route path="/current-view"><CurrentView currentId= { currentId } setCurrentId = { setCurrentId }/></Route>
+                <Route path="/current-update"><CurrentUpdate currentId= { currentId } setCurrentId = { setCurrentId }/></Route>
+                <Route path="/create" exact ><Create currentId= { currentId } setCurrentId = { setCurrentId } /></Route>
+                <Route path="/completed"><Completed setCurrentId = { setCurrentId }/></Route>
+                <Route path="/completed-view"><CompletedView currentId= { currentId } setCurrentId = { setCurrentId }/></Route>
+                <Route path="/completed-update"><CompletedUpdate currentId= { currentId } setCurrentId = { setCurrentId }/></Route>
+                <Route path="/assign"><Assign setCurrentId = { setCurrentId }/></Route>
+                <Route path="/assign-view"><AssignView currentId= { currentId } setCurrentId = { setCurrentId }/></Route>
+                <Route path="/assign-update"><AssignUpdate currentId= { currentId } setCurrentId = { setCurrentId }/></Route>                   
+                <Route path="/archived" ><Archived setCurrentId = { setCurrentId } /></Route>
+                <Route path="/archived-view"><ArchivedView currentId= { currentId } setCurrentId = { setCurrentId }/></Route>
+                
             </div>
         </Router>
     )

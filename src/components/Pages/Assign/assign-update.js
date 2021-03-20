@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
-import FileBase from 'react-file-base64';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
+import { useDispatch,  useSelector  } from 'react-redux';
 
-import { createPost } from '../../actions/posts';
+import { updatePost } from '../../../actions/posts';
 
-const Create = ({ currentId, setCurrentId }) => {
+const AssignUpdate = ({ currentId, setCurrentId }) => {
+    // TODO
+    // handler for clearing input fields on submit. 
     const [postData, setPostData] = useState({
-        issuer: '', title: '', issuedTo: '', summary: '', comments:'', selectFile:'', status: 'Assign'
+        issuer: '', title: '', issuedTo: '', summary: '', comments:'', selectFile:'', status: ''
     });
+    const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
     const dispatch = useDispatch();
+    useEffect(() => {
+        if(post) setPostData(post)
+    }, [post])
     const clear = () => {
         setCurrentId(0)
         setPostData({issuer: '', title: '', issuedTo: '', summary: '', comments:'', selectFile:'', status: 'Assign'})
@@ -16,15 +22,17 @@ const Create = ({ currentId, setCurrentId }) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(createPost(postData));
+        if(currentId) {
+            dispatch(updatePost( currentId, postData))
+        }
         clear();
     }
     return ( 
-        <form className="form-container" onSubmit={handleSubmit}>
+        <form className="update-form-container" onSubmit={handleSubmit}>
             <div className= "header">
-                <h1>Create a Work Order</h1>
+                <h1>Updating Work Order</h1>
             </div>
-            <div className="first-row">
+            <div className = "first-row">
                 <input
                     name = 'issuer'
                     label='Issuer'
@@ -51,13 +59,13 @@ const Create = ({ currentId, setCurrentId }) => {
                 value={postData.status}
                 onChange={(e) => setPostData({...postData, status: e.target.value })}
                 >   
-                <option value="Assign">Assign</option>
-                <option value="Current">Current</option>
-                <option value="Complete">Complete</option>
-                <option value="Archived">Archived</option>                    
+                    <option value="Assign">Assign</option>
+                    <option value="Current">Current</option>
+                    <option value="Complete">Complete</option>
+                    <option value="Archived">Archived</option>                    
                 </select>
             </div>
-            <div className = "second-row">
+            <div className= "second-row">
                 <input
                 name = 'summary'
                 label='Summary'
@@ -65,18 +73,23 @@ const Create = ({ currentId, setCurrentId }) => {
                 placeholder='Summary'
                 onChange={(e) => setPostData({...postData, summary: e.target.value })}
                 />            
-                {/* <div>
-                    <FileBase 
-                        type= "file"
-                        multiple={false}
-                        onDone={( {base64} ) => setPostData({ ...postData, selectFile: base64 })}
-                    />
-                </div>  */}
             </div>
-            <div className= "submit">
-                <button type="submit"> Submit </button>    
+            <div className = "third-row">
+                <input
+                    name = 'comments'
+                    label='Comments'
+                    value= {postData.comments}
+                    placeholder='Comments'
+                    onChange={(e) => setPostData({...postData, comments: e.target.value })}
+                /> 
             </div>
+            <div className= "buttons">
+                <button type="submit"> Submit </button>
+                <button className= "button">
+                    <Link to="/assign-view">Cancel</Link>
+                </button> 
+            </div>                
         </form>
     );
 }
-export default Create;
+export default AssignUpdate;

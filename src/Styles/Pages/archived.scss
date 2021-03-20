@@ -3,13 +3,20 @@
     height: 75vh;
     border-radius: 7px;
     box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin-top: 25px;
+
     .Header-Back-btn {
+        margin: 20px;
         justify-content: center;
         color:  rgb(12, 85, 12);
     }
 
     .Work-Order {
+        overflow: hidden;
         color:  rgb(12, 85, 12);
+        margin-left: 20px;
+
     }
 
     .button button {
@@ -20,5 +27,6 @@
 
     .button a {
         text-decoration: none;
+        color: black;
     }
 }

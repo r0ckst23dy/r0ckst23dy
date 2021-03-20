@@ -3,10 +3,31 @@
     height: 75vh;
     border-radius: 7px;
     box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.5);
+    margin-top: 25px;
 
 
     .Work-Order {
+        margin: 30px;
+        margin-top: 20px;
         color:  rgb(12, 85, 12);
+        transform: translateX(300px);
+
+        h1 { 
+            margin: 20px;
+        }
+
+    }
+    .buttons { 
+        width: 10%;
+        margin: 30px;
+        transform: translateX(660px);
+        display: flex;
+        justify-content: space-between;
+
+        .button a {
+            text-decoration: none;
+            color: black
+        }
     }
 
     .button button {
