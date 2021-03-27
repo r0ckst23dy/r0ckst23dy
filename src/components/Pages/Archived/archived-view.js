@@ -16,18 +16,23 @@ const ArchivedView = ({ currentId, setCurrentId }) => {
     return(
         <div className= "View-Container">
             <div className="Work-Order">
-                <h1 >{postData.title}</h1>
-                <h1 >{postData.issuedTo}</h1>
-                <h1 >{postData.issueData}</h1>
-                <h1 >{postData.issuer}</h1>
-                <h1 >{postData.summary}</h1>
-                <h1 >{postData.comments}</h1>
-            </div>
-            <div className= 'buttons'>
+            <label>Title:</label>
+                <h3 >{postData.title}</h3>
+                <label>Issued To:</label>
+                <h3 >{postData.issuedTo}</h3>
+                <h3 >{postData.issueData}</h3>
+                <label>Issuer:</label>
+                <h3 >{postData.issuer}</h3>
+                <label>Summary:</label>
+                <h3 >{postData.summary}</h3>
+                <label>Comments:</label>
+                <h3 >{postData.comments}</h3>
+                <div className= 'buttons'>
                 <button className= "button">
                         <Link to="/archived">Back</Link>
                 </button>            
-            </div>          
+            </div>  
+            </div>       
         </div>
     )
 }

@@ -35,6 +35,12 @@ const Current = ({setCurrentId}) => {
                         <b>Yay! You have seen it all</b>
                         </p>
                     }
+                    style={{
+                        height: 370,
+                        overflow:'auto',
+                        display: 'flex',
+                        flexDirection: 'column'
+                    }}
                 >
                     {dataObject}
                 </InfiniteScroll>

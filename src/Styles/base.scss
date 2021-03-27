@@ -14,8 +14,13 @@ code {
     monospace;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .container {
-    height:100vh;       
+    height: 100vh;      
     background-color: rgb(12, 85, 12);
     color: white;
     padding:0px 10px;

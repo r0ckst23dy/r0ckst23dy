@@ -10,8 +10,8 @@ const Archived = ({ setCurrentId }) => {
         if(data.status === "Archived") {
             return (
                 <div className= "dataObject" post= {data} key={data._id}>
-                    <div>{data.title}</div>
-                    <div>{data.issuedTo}</div>
+                    <div>Title: {data.title}</div>
+                    <div>Issued To: {data.issuedTo}</div>
                     <div>{data.issueDate}</div>
                     <button className= "button" onClick={() => setCurrentId(data._id)}>
                         <Link to="/archived-view">View</Link> 
@@ -26,8 +26,10 @@ const Archived = ({ setCurrentId }) => {
                 <h1>Archived Work Orders</h1>                
             </div>
             <div>{loading} </div>
-            <div className="Work-Order">
-                <InfiniteScroll setCurrentId = {setCurrentId}
+            <div className="Work-Order"
+                
+            >
+                <InfiniteScroll className="scroll" setCurrentId = {setCurrentId}
                     dataLength={posts.length} 
                     next={posts}
                     hasMore={true}
@@ -37,8 +39,15 @@ const Archived = ({ setCurrentId }) => {
                         <b>Yay! You have seen it all</b>
                         </p>
                     }
+                    style={{
+                        height: 370,
+                        overflow:'auto',
+                        display: 'flex',
+                        flexDirection: 'column'
+                    }}
                 >
                     {dataObject}
+                    <div className="spacer"/>
                 </InfiniteScroll>
             </div>
         </div>

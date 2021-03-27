@@ -1,24 +1,26 @@
 .form-container {
     background-color: gold;
-    height: 75vh;
+    height: 70vh;
     border-radius: 7px;
     box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.5);
     margin-top: 25px;
 
     .header { 
+        display: flex;
         color:  rgb(12, 85, 12);
     }
 
     .first-row {
-        width: 80%;
+        width: 83.5%;
         display:flex;
         justify-content: space-between;
         align-items: center;
         margin:10px;
-        transform: translateX(100px);
+        margin-left: 71px;
+
 
         input {
-            width: 23%;
+            width: 20%;
             
         }
 
@@ -28,8 +30,11 @@
     }
     
     .second-row {
+        display: flex;
+        flex-direction: row;
+        transform: translateX(73px);
         margin-top: 20px;
-        transform: translateX(110px);
+
         input { 
             width: 59.5%;
             height: 20vh;
@@ -37,7 +42,8 @@
     }
 
     .submit{
+        display: flex;
+        justify-content: center;
         margin: 30px;
-        transform: translateX(500px);
     }
 }
