@@ -7,7 +7,8 @@
 
     .Header-Back-btn {
         margin: 20px;
-        justify-content: center;
+        display: flex;
+        justify-content: space-between;
         color:  rgb(12, 85, 12);
     }
 

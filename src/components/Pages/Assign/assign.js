@@ -22,7 +22,7 @@ const Assign = ({setCurrentId}) => {
     return ( 
         <div className="Assign-Page-Container">
             <div className="Header-Back-btn">
-                <h1> Assign Work Orders</h1>
+                <h1>Assign Work Orders</h1>
             </div>
             <div className="Work-Order">
                 <InfiniteScroll setCurrentId = {setCurrentId}

@@ -6,8 +6,11 @@
     margin-top: 25px;
 
     .header { 
+        margin: 20px;
         display: flex;
+        justify-content: space-between;
         color:  rgb(12, 85, 12);
+        padding: 0px;
     }
 
     .first-row {
