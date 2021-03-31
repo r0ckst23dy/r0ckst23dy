@@ -4,18 +4,15 @@ import { Link } from "react-router-dom";
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 const Completed = ({setCurrentId}) => {
-    // TODO 
-    // Add loading handler
-    // Add onScroll Functionality
     const posts = useSelector((state) => state.posts)
     const dataObject = posts.map((data) => {
 
         if(data.status === "Complete") {
             return (
                 <div className= "dataObject" post= {data} key={data._id}>
-                        <div>{data.title}</div>
-                        <div>{data.issuedTo}</div>
-                        <div>{data.issueDate}</div>
+                    <div className="title">Title: {data.title}</div>
+                    <div className="issuedTo">Issued To: {data.issuedTo}</div>
+                    <div className="issueDate">{data.issueDate}</div>
                     <button className= "button" onClick={() => setCurrentId(data._id)}>
                         <Link to="/completed-view">View</Link> 
                     </button>
@@ -42,7 +39,7 @@ const Completed = ({setCurrentId}) => {
                         </p>
                     }
                     style={{
-                        height: 370,
+                        height: 330,
                         overflow:'auto',
                         display: 'flex',
                         flexDirection: 'column'

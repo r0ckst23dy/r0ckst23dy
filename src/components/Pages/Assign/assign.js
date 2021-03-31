@@ -9,9 +9,9 @@ const Assign = ({setCurrentId}) => {
         if(data.status === "Assign") {
             return (
                 <div className= "dataObject" post= {data} key={data._id}>
-                        <div>{data.title}</div>
-                        <div>{data.issuedTo}</div>
-                        <div>{data.issueDate}</div>
+                    <div className="title">Title: {data.title}</div>
+                    <div className="issuedTo">Issued To: {data.issuedTo}</div>
+                    <div className="issueDate">{data.issueDate}</div>
                     <button className= "button" onClick={() => setCurrentId(data._id)}>
                         <Link to="/assign-view">View</Link> 
                     </button>
@@ -36,7 +36,7 @@ const Assign = ({setCurrentId}) => {
                         </p>
                     }
                     style={{
-                        height: 370,
+                        height: 330,
                         overflow:'auto',
                         display: 'flex',
                         flexDirection: 'column'

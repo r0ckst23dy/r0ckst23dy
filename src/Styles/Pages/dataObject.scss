@@ -1,9 +1,28 @@
 .dataObject { 
-    height: 1em;
-    width: 80vw;
+    height: 2em;
+    width: 85vw;
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
     justify-items: center;
+
+    .title{
+        width: 30vh;
+        height: 20vh;
+
+    }
+
+    .issuedTo{
+        width: 30vh;
+    }
+
+    .issueDate {
+        width:30vh;
+        height: 20px;
+    }
+
+    .button { 
+        height: 1.25em;
+    }
 
 }

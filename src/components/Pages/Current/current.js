@@ -9,9 +9,9 @@ const Current = ({setCurrentId}) => {
         if(data.status === "Current") {
             return (
                 <div className= "dataObject" post= {data} key={data._id}>
-                    <div>{data.title}</div>
-                    <div>{data.issuedTo}</div>
-                    <div>{data.issueDate}</div>
+                    <div className="title">Title: {data.title}</div>
+                    <div className="issuedTo">Issued To: {data.issuedTo}</div>
+                    <div className="issueDate">{data.issueDate}</div>
                     <button className= "button" onClick={() => setCurrentId(data._id)}>
                         <Link to="/current-view">View</Link> 
                     </button>
@@ -36,7 +36,7 @@ const Current = ({setCurrentId}) => {
                         </p>
                     }
                     style={{
-                        height: 370,
+                        height: 380,
                         overflow:'auto',
                         display: 'flex',
                         flexDirection: 'column'
